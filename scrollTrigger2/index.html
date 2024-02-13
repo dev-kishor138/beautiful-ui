@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap');
+
+        body {
+            font-family: "Signika Negative", sans-serif;
+            font-weight: 300;
+            height: 300vh;
+        }
+
+        .trigger {
+            position: absolute;
+            top: 75vh;
+            left: 0;
+            width: 100vw;
+            height: 80vh;
+            background-color: lightgray;
+            padding: 20px;
+        }
+
+        .box {
+            background-color: black;
+            width: 10vw;
+            height: 10vw;
+        }
+    </style>
+</head>
+
+
+<body>
+    <h1>Scroll down</h1>
+
+    <div class="trigger">
+        <div class="box"></div>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+    <script>
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".trigger",
+                start: "top top",
+                end: "+=1000",
+                scrub: 1,
+                pin: true,
+                markers: true
+            }
+        });
+        tl.to(".box", { yPercent: 350, duration: 1 })
+        tl.to(".box", { rotation: 360, duration: 3 })
+        tl.to(".box", { xPercent: 350, duration: 1 })
+    </script>
+</body>
+
+</html>

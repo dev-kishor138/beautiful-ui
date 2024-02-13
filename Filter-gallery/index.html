@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section>
+        <ul>
+            <li class="list active" data-filter="all">
+                all
+            </li>
+            <li class="list" data-filter="popular">
+                popular
+            </li>
+            <li class="list" data-filter="latest">
+                latest
+            </li>
+            <li class="list" data-filter="trending">
+                trending
+            </li>
+            <li class="list" data-filter="brand">
+                brand
+            </li>
+        </ul>
+        <div class="product">
+            <div class="item-box" data-item="popular">
+                <img src="img/blog1.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="popular">
+                <img src="img/post-10.jpg" alt="popular image">
+            </div>
+            <div class="item-box" data-item="popular">
+                <img src="img/feature-img1.jpg" alt="popular image">
+            </div>
+            <div class="item-box" data-item="popular">
+                <img src="img/post-5.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="latest">
+                <img src="img/blog2.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="latest">
+                <img src="img/thumb-card4.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="latest">
+                <img src="img/post-6.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="latest">
+                <img src="img/post-2.jpg" alt="popular image">
+            </div>
+            <div class="item-box" data-item="latest">
+                <img src="img/thumb-card8.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="trending">
+                <img src="img/blog3.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="trending">
+                <img src="img/thumb-card5.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="trending">
+                <img src="img/post-3.jpg" alt="popular image">
+            </div>
+            <div class="item-box" data-item="trending">
+                <img src="img/post-7.jpg" alt="popular image">
+            </div>
+            <div class="item-box" data-item="brand">
+                <img src="img/blog4.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="brand">
+                <img src="img/thumb-card6.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="brand">
+                <img src="img/post-4.png" alt="popular image">
+            </div>
+            <div class="item-box" data-item="brand">
+                <img src="img/post-8.jpg" alt="popular image">
+            </div>
+            <div class="item-box" data-item="popular">
+                <img src="img/post-1.jpg" alt="popular image">
+            </div>
+            <div class="item-box" data-item="popular">
+                <img src="img/post-9.jpg" alt="popular image">
+            </div>
+            <div class="item-box" data-item="popular">
+                <img src="img/thumb-card7.png" alt="popular image">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let list = document.querySelectorAll(".list");
+        let itemBox = document.querySelectorAll(".item-box");
+
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener("click", function () {
+                for (let j = 0; j < list.length; j++) {
+                    list[j].classList.remove("active");
+                }
+                this.classList.add("active");
+
+                let dataFilter = this.getAttribute("data-filter");
+
+                for (let k = 0; k < itemBox.length; k++) {
+                    itemBox[k].classList.remove("active");
+                    itemBox[k].classList.add("hide");
+
+                    if (itemBox[k].getAttribute("data-item") == dataFilter || dataFilter == "all") {
+                        itemBox[k].classList.remove('hide');
+                        itemBox[k].classList.add('active');
+                    }
+                }
+            })
+        }
+    </script>
+
+</body>
+
+</html>

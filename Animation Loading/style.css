@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+    min-height: 100vh;
+    background: #191919;
+}
+
+@property --a {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+.loader1 {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: repeating-conic-gradient(from var(--a), var(--clr) 0%, var(--clr) 5%, transparent 5%, transparent 40%, var(--clr) 100%);
+    border-radius: 50%;
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        --a: 0deg;
+    }
+
+    100% {
+        --a: 360deg;
+    }
+}
+
+.loader1::before {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background: #191919;
+    border-radius: 50%;
+}
+
+.loader1 span {
+    position: absolute;
+    inset: 0;
+    animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader1 span:before {
+    content: "";
+    position: absolute;
+    left: 94px;
+    width: 10px;
+    height: 10px;
+    background: var(--clr);
+    border-radius: 50%;
+    box-shadow: 0 0 5px var(--clr),
+        0 0 20px var(--clr),
+        0 0 40px var(--clr);
+}
+
+
+.loader2 {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background: repeating-conic-gradient(from var(--a), var(--clr1) 0%, var(--clr1) 5%, transparent 5%, transparent 60%, var(--clr1) 100%);
+    border-radius: 50%;
+    animation: animate 4s linear infinite;
+}
+
+.loader2::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-conic-gradient(from var(--a), var(--clr2) 0%, var(--clr2) 5%, transparent 5%, transparent 60%, var(--clr2) 100%);
+    animation: animate 4s linear infinite;
+    animation-delay: -2s;
+    border-radius: 50%;
+}
+
+.loader2::after {
+    content: "";
+    position: absolute;
+    inset: 9px;
+    background: #191919;
+    border-radius: 50%;
+}
+
+.loader2 span {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1000;
+    animation: rotate 4s linear infinite
+}
+
+.loader2 span::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 92px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr1);
+    box-shadow: 0 0 5px var(--clr1),
+        0 0 20px var(--clr1),
+        0 0 40px var(--clr1),
+        0 0 60px var(--clr1);
+}
+
+.loader2 span::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    right: 92px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--clr2);
+    box-shadow: 0 0 5px var(--clr2),
+        0 0 20px var(--clr2),
+        0 0 40px var(--clr2),
+        0 0 60px var(--clr2);
+}

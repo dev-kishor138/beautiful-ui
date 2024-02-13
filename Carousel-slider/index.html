@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Carousel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">Movies</a>
+        <ul class="nav">
+            <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+        </ul>
+        <div class="search">
+            <input type="search" name="" id="" placeholder="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </header>
+
+
+    <div class="banner">
+        <div class="content active">
+            <img class="movie-title" src="img/the-little-mermaid-title.png" alt="">
+            <h4>
+                <span>2023</span>
+                <span><i>12+</i></span>
+                <span>2h 14min</span>
+                <span>Romance</span>
+            </h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, distinctio. Nulla, explicabo? Saepe
+                delectus est dolorum nulla dicta sapiente laudantium, culpa earum, rem, voluptates quisquam facere ad
+                dolores minus voluptatibus dolor. Quasi fugiat perferendis ratione quos necessitatibus sequi explicabo
+                iste quam! Eum dolore debitis ad aliquam nemo, id quam nam.</p>
+
+            <div class="button">
+                <a href="#"><i class="fa-solid fa-play"></i> Watch</a>
+                <a href="#"><i class="fa-solid fa-plus"></i> My List</a>
+            </div>
+        </div>
+        <div class="carousel-box">
+            <div class="carousel">
+                <div class="carousel-item" onClick="changeBg('bg-little-mermaid.jpg', 'the-little-mermaid');">
+                    <img src="img/movies/the-little-mermaid.jpeg" alt="">
+                </div>
+                <div class="carousel-item" onClick="changeBg('bg-65.jpg', '65');">
+                    <img src="img/movies/65.jpg" alt="">
+                </div>
+                <div class="carousel-item" onClick="changeBg('bg-the-covenant.jpg', 'the-covenant');">
+                    <img src="img/movies/the-covenant.jpg" alt="">
+                </div>
+                <div class="carousel-item" onClick="changeBg('bg-the-black-demon.jpg', 'the-black-demon');">
+                    <img src="img/movies/the-black-demon.jpg" alt="">
+                </div>
+                <div class="carousel-item" onClick="changeBg('bg-the-tank.jpeg', 'the-tank');">
+                    <img src="img/movies/the-tank.jpeg" alt="">
+                </div>
+            </div>
+        </div>
+        <a href="#" class="play"><i class="fa-regular fa-circle-play"></i> Watch Trailer</a>
+        <ul class="sci">
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel').carousel();
+        });
+    </script>
+</body>
+
+</html>

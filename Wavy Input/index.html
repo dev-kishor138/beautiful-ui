@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wavy Input Animation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="input-box">
+        <input type="text" required>
+        <label>Type&nbsp;Your&nbsp;Name&nbsp;Here</label>
+    </div>
+
+    <script>
+        let label = document.querySelector('label');
+        label.innerHTML = label.innerText.split('').map((letters, i) => `<span style="transition-delay: ${i * 30}ms">${letters}</span>`).join('');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massonary Image Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 1400px;
+            margin: 20px auto;
+            columns: 3;
+            column-gap: 20px;
+        }
+
+        .container .box {
+            width: 100%;
+            margin-bottom: 10px;
+            break-inside: avoid;
+        }
+
+        .container .box img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                width: calc(100% - 40px);
+            }
+        }
+
+        @media (max-width: 920px) {
+            .container {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"><img src="image/blog1.png" alt=""></div>
+        <div class="box"><img src="image/feature-img1.jpg" alt=""></div>
+        <div class="box"><img src="image/post-6.png" alt=""></div>
+        <div class="box"><img src="image/blog3.png" alt=""></div>
+        <div class="box"><img src="image/thumb-card6.png" alt=""></div>
+        <div class="box"><img src="image/blog4.png" alt=""></div>
+        <div class="box"><img src="image/thumb-card5.png" alt=""></div>
+        <div class="box"><img src="image/m-blog-3.jpg" alt=""></div>
+        <div class="box"><img src="image/thumb-card3.png" alt=""></div>
+        <div class="box"><img src="image/blog6.png" alt=""></div>
+        <div class="box"><img src="image/thumb-card8.png" alt=""></div>
+        <div class="box"><img src="image/thumb-card7.png" alt=""></div>
+        <div class="box"><img src="image/thumb-card6.png" alt=""></div>
+        <div class="box"><img src="image/thumb-card5.png" alt=""></div>
+        <div class="box"><img src="image/thumb-card4.png" alt=""></div>
+        <div class="box"><img src="image/thumb-card3.png" alt=""></div>
+        <div class="box"><img src="image/post-9.jpg" alt=""></div>
+        <div class="box"><img src="image/post-8.jpg" alt=""></div>
+        <div class="box"><img src="image/post-7.jpg" alt=""></div>
+        <div class="box"><img src="image/post-6.jpg" alt=""></div>
+        <div class="box"><img src="image/post-5.jpg" alt=""></div>
+    </div>
+</body>
+
+</html>

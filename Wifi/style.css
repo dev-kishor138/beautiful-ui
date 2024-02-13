@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    position: relative;
+    width: 0;
+    height: 0;
+    border: 300px solid transparent;
+    border-top: 300px solid red;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+}

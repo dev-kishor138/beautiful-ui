@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        background: #a0a0a0;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 1em;
+      }
+
+      nav div {
+        display: flex;
+        padding: 1em;
+        gap: 10em;
+      }
+      nav div a {
+        text-decoration: none;
+        color: #000;
+        font-family: "Neue Montreal";
+      }
+      .header {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 2em;
+      }
+      .header .h1 {
+        position: relative;
+        font-family: "Carpenter";
+        font-style: 32vw;
+        color: #1a1a1a;
+        line-height: 1.125;
+      }
+
+      .overlay {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 2;
+        display: flex;
+      }
+
+      .bar {
+        width: 10vw;
+        height: 105vh;
+        background: #1a1a1a;
+      }
+      .counter {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        z-index: 10000;
+        color: #bcbcc4;
+        padding: 0.2em 0.4em;
+        font-size: 20vw;
+        font-family: "Courier New", Courier, monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="counter">0</h1>
+
+    <div class="overlay">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <div class="container">
+      <nav>
+        <div>
+          <a href="#">about</a>
+          <a href="#">contact</a>
+        </div>
+        <div>
+          <a href="#">PlayGround</a>
+        </div>
+      </nav>
+
+      <div class="header">
+        <div class="h1">F</div>
+        <div class="h1">e</div>
+        <div class="h1">l</div>
+        <div class="h1">t</div>
+        <div class="h1">u</div>
+        <div class="h1">s</div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"></script>
+    <script>
+      function startLoader() {
+        let counterElement = document.querySelector(".counter");
+        // console.log(counterElement);
+        let currentValue = 0;
+
+        function updateCounter() {
+          if (currentValue === 100) {
+            return;
+          }
+          currentValue += Math.floor(Math.random() * 10) + 1;
+          if (currentValue > 100) {
+            currentValue = 100;
+          }
+
+          document.querySelector(".counter").innerText = currentValue;
+
+          let delay = Math.floor(Math.random() * 200) + 50;
+
+          setTimeout(updateCounter, delay)
+        }
+
+        updateCounter();
+      }
+
+      startLoader();
+
+
+      gsap.to(".counter", 0.25, {
+        delay: 3.5,
+        opacity: 0,
+      })
+
+      gsap.to(".bar", 1.5, {
+        delay: 3.5,
+        height: 0,
+        stagger: {
+            amount: 0.5,
+
+        },
+        ease: "power4.inOut"
+      })
+
+      gsap.from('.h1', 1.5, {
+        delay: 4,
+        y: 700,
+        stagger: {
+            amount: 0.5,
+        },
+        ease: "power4.inOut",
+      })
+    </script>
+  </body>
+</html>

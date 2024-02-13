@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu on Page Scroll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#home" style="--clr:#f3218b;" class="active">
+                <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                <span class="text">home</span>
+            </a>
+            <a href="#about" style="--clr:#2196f3;">
+                <span class="icon"><ion-icon name="information-circle-outline"></ion-icon></span>
+                <span class="text">about</span>
+            </a>
+            <a href="#services" style="--clr:#008a1b;">
+                <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                <span class="text">services</span>
+            </a>
+            <a href="#blog" style="--clr:#dc1dff;">
+                <span class="icon"><ion-icon name="reader-outline"></ion-icon></span>
+                <span class="text">blog</span>
+            </a>
+            <a href="#contact" style="--clr:#d56f16;">
+                <span class="icon"><ion-icon name="chatbox-ellipses-outline"></ion-icon></span>
+                <span class="text">contact</span>
+            </a>
+            <div class="indicator"></div>
+        </nav>
+    </header>
+
+    <section id="home">Home</section>
+    <section id="about">about</section>
+    <section id="services">services</section>
+    <section id="blog">blog</section>
+    <section id="contact">contact</section>
+
+
+
+    <!-- Io Icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <!-- custom Js  -->
+    <script>
+        let sec = document.querySelectorAll("section");
+        let links = document.querySelectorAll('header nav a');
+
+        window.onscroll = () => {
+            sec.forEach(section => {
+                let top = window.scrollY;
+                let offset = section.offsetTop;
+                let height = section.offsetHeight;
+                let id = section.getAttribute('id');
+
+                if (top >= offset && top < offset + height) {
+                    links.forEach(link => {
+                        link.classList.remove('active');
+                        document.querySelector('header nav a[href*=' + id + ']').classList.add('active')
+                    })
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
